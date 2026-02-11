@@ -17,12 +17,12 @@
 
 虽然备份了也恢复不回去了，但还请记得你是谁
 
-- [ ] details/info（个人信息）
-- [ ] honor（荣誉信息）
-- [ ] work-list（作品列表）
-- [ ] collect-list（收藏列表）
-- [ ] followers-list（关注列表）
-- [ ] fan-list（粉丝列表）
+- [x] details/info（个人信息）
+- [x] honor（荣誉信息）
+- [x] work-list（作品列表）
+- [x] collect-list（收藏列表）
+- [x] followers-list（关注列表）
+- [x] fan-list（粉丝列表）
 
 **作品**
 
@@ -33,7 +33,6 @@
 - [ ] bcm4（k4作品备份/源文件格式）
 - [ ] coco（coco作品备份/源文件格式）
 - [ ] bcmkn（KN作品备份/源文件格式）
-- [ ] tur（turtle作品备份/源文件格式）
 - [ ] reply（个人作品下所有评论）
 
 **论坛**
@@ -84,17 +83,12 @@
 │   │       ├── info.json
 │   │       └── reply.json
 │   │
-│   ├── coco/
-│   │   └── {作品名称}/
-│   │       ├── {作品ID}.json
-│   │       ├── info.json
-│   │       └── reply.json
-│   │
-│   └── turtle/
+│   └── coco/
 │       └── {作品名称}/
-│           ├── {作品ID}.tur
+│           ├── {作品ID}.json
 │           ├── info.json
 │           └── reply.json
+│   
 │
 ├── forum/
 │   ├── {帖子ID-帖子标题}/

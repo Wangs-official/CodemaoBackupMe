@@ -29,6 +29,7 @@ def login_user(phone: str, password: str):
             True,
             str(json.loads(response.text).get("user_info", {}).get("nickname")),
             str(json.loads(response.text).get("auth", {}).get("token")),
+            str(json.loads(response.text).get("user_info", {}).get("id"))
         )
     else:
         return False, str(response.status_code), str(response.text)
