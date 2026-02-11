@@ -1,0 +1,4 @@
+requests
+pyyaml
+fake_useragent
+rich
