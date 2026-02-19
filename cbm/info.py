@@ -1,31 +1,17 @@
-from fake_useragent import UserAgent
-from function import log
+from function import log, loading, header
 from rich.console import Console
 import requests
 import json
 import math
-
-
-def loading(now: int, all: int, url: int):
-    console = Console()
-    console.print(f"[blue bold]{now}/{all}[/blue bold] 正在请求: {url}", end="\r")
-
 
 def backup(token: str, id: str, path: str):
     console = Console()
     now = 0
     fanslist = []
     followlist = []
-    headers = {
-        "Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "zh-CN,zh;q=0.9",
-        "Connection": "keep-alive",
-        "Content-Type": "application/json",
-        "User-Agent": UserAgent().random,
-        "authorization": f"Bearer {token}",
-    }
+    headers = header(token)
     logger = log()
+
     details_url = "https://api.codemao.cn/web/users/details"
     info_url = "https://api.codemao.cn/api/user/info"
     honor_url = (
@@ -63,7 +49,7 @@ def backup(token: str, id: str, path: str):
             )
             page_num = math.ceil(total_num / 200)
             logger.info(f"关注列表共{total_num}个，正在分{page_num}页处理")
-            console.print()
+            console.print(f"关注列表共{total_num}个，正在分{page_num}页处理")
             for n in range(0, page_num):
                 console.print(
                     f"[blue bold]{n}/{page_num}[/blue bold] 正在获取关注列表 [yellow]此步骤时间较长[/yellow] 根据关注数量决定最终请求时长",

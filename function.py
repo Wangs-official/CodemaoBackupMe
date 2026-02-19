@@ -1,3 +1,4 @@
+from fake_useragent import UserAgent
 from datetime import datetime
 from rich.console import Console
 import logging
@@ -22,3 +23,18 @@ def log():
         ]
     )
     return logging.getLogger(__name__)
+
+def loading(now: int, all: int, url: int):
+    console = Console()
+    console.print(f"[blue bold]{now}/{all}[/blue bold] 正在请求: {url}", end="\r")
+
+def header(token: str):
+    return {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "zh-CN,zh;q=0.9",
+        "Connection": "keep-alive",
+        "Content-Type": "application/json",
+        "User-Agent": UserAgent().random,
+        "authorization": f"Bearer {token}",
+    }

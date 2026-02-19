@@ -39,7 +39,7 @@
 
 发布的帖子，以及回复
 
-- [ ] created（发布的帖子/HTML格式）
+- [x] created（发布的帖子/HTML格式）
 - [ ] reply（帖子回复/HTML格式）
 - [ ] replied（自己发布的帖子回复/HTML格式）
   
